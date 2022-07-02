@@ -50,8 +50,8 @@ const thoughtSchema = new Schema({
   toJSON: {
     getters: true,
     virtuals: true,
-    id: flase
-  }
+    id: flase,
+  },
 });
 
 thoughtSchema.virtual("reactionCount").get(function () {

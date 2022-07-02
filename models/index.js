@@ -3,5 +3,5 @@ const Thoughts = require("./Thoughts.js");
 
 module.exports = {
     User,
-    Thoughts
+    Thoughts,
 };
