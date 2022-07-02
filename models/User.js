@@ -19,7 +19,7 @@ const userSchema = new Schema({
       "Invalid email entry.",
     ],
   },
-  thoughts: [{
+  Thought: [{
     type: Schema.Types.ObjectId,
     ref: "Thought",
   }, ],
