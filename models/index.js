@@ -1,7 +1,6 @@
-const User = require("./User.js");
-const Thought = require("./Thought.js");
+// Index file loactionss
+const Users = require("./Users.js");
+const Thoughts = require("./Thoughts.js");
 
-module.exports = {
-    User,
-    Thought,
-};
+// Get out and stay out!
+module.exports = { Users, Thoughts };
