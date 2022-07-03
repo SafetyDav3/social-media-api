@@ -1,14 +1,14 @@
-const { User } = require("../models");
+const { Users } = require("../models");
 
 const userController = {
-  createUser({ body }, res) {
-    User.create(body)
+  createUsers({ body }, res) {
+    Users.create(body)
       .then((dbUserData) => res.json(dbUserData))
       .catch((err) => res.status(400).json(err));
   },
 
   getAllUser(req, res) {
-    User.find({})
+    Users.find({})
       .populate({
         path: "Thought",
         select: "-__v",
@@ -29,7 +29,7 @@ const userController = {
   },
 
   getUserById({ params }, res) {
-    User.findOne({
+    Users.findOne({
       _id: params.id,
     })
       .populate({
@@ -57,7 +57,7 @@ const userController = {
   },
 
   updateUser({ params, body }, res) {
-    User.findOneAndUpdate(
+    Users.findOneAndUpdate(
       {
         _id: params.id,
       },
@@ -100,7 +100,7 @@ const userController = {
   },
 
   addFriend({ params }, res) {
-    User.findOneAndUpdate(
+    Users.findOneAndUpdate(
       {
         _id: params.id,
       },
@@ -131,7 +131,7 @@ const userController = {
   },
 
   deleteFriend({ params }, res) {
-    User.findOneAndUpdate(
+    Users.findOneAndUpdate(
       {
         _id: params.id,
       },
