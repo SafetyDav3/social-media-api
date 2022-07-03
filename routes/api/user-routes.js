@@ -1,5 +1,7 @@
+// Establish router
 const router = require('express').Router();
-// created in user controller
+
+// Establish link between functions and source file
 const {
     getAllUser,
     getUserById,
@@ -10,22 +12,21 @@ const {
     deleteFriend
   } = require('../../controllers/user-controller');
 
-// GET all and POST at /api/users
+// ↓↓↓ Establish routes for GET/POST/DELETE/PUT - "CRUD" ~START~ ↓↓↓
 router
   .route('/')
   .get(getAllUser)
   .post(createUser);
-
-// GET one, PUT, and DELETE at /api/users/:id
 router
   .route('/:id')
   .get(getUserById)
   .put(updateUser)
   .delete(deleteUser);
-
 router
   .route('/:userId/friends/:friendId')
   .post(addFriend)
   .delete(deleteFriend);
+// ↑↑↑ Establish routes for GET/POST/DELETE/PUT - "CRUD"  ~END~ ↑↑↑
 
+// You got exactly one femtosecond to get the **** out module or this transistor is going to transist!
 module.exports = router;
