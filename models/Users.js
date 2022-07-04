@@ -26,7 +26,7 @@ const UserSchema = new Schema(
     friends: [
       {
         type: Schema.Types.ObjectId,
-        ref: "User",
+        ref: "Users",
       },
     ],
   },
@@ -45,7 +45,7 @@ UserSchema.virtual("friendCount").get(function () {
 });
 
 // Create user model from schema
-const User = model("User", UserSchema);
+const Users = model("Users", UserSchema);
 
 // I better not see you around here again module!
-module.exports = User;
+module.exports = Users;
